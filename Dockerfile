@@ -1,6 +1,7 @@
 FROM ubuntu:focal as lammps-base
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV LD_LIBRARY_PATH=/opt/lammps/src:$LD_LIBRARY_PATH
 
 # Update to latest packages and development tools
 RUN apt update -y \
