@@ -110,6 +110,17 @@ NOTE: On the current Archer2 system, the conda init may not pass into the submis
 
 For Archer2, you will need your usual SBATCH commands, followed by the conda init (if not read from `.bashrc`), followed by `source activate <yourenvname>`, and finally `python <input_file.py> > <output file>`, where the input file is currently named `fitting.py`.
 
+## Compiling LAMMPS and the code using Docker
+
+Given you have [Docker]() installed, you can build a container image of PopOff with the following:
+```
+docker build -t popoff .
+```
+
+To test lammps, use the following quick check:
+```
+docker run popoff python -c "from lammps import lammps; lammps()"
+```
 
 ## Testing LAMMPS-python is working
 
